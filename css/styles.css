@@ -689,18 +689,33 @@ ul {
 /* ==========Footer========== */
 
 .main-footer {
-    padding: 100px 0;
+    padding: 96px 0;
     background-color: #2e2f42;
 
 }
 
+@media screen and (min-width: 1156px) {
+    .main-footer {
+        padding: 100px 0;
+        background-color: #2e2f42;
+    }
+}
+
+
+
 .footer-container {
-    display: flex;
+    display: block;
     align-items: baseline;
 }
 
+@media screen and (min-width: 1156px) {
+    .footer-container {
+        display: flex;
+    }
+}
+
 .title-footer {
-    width: 264px;
+    /* width: 264px; */
     color: #F4F4FD;
     font-size: 16px;
     line-height: 1.5;
@@ -709,6 +724,8 @@ ul {
 
 .social-media-txt {
     display: flex;
+    margin-left: auto;
+    margin-right: auto;
     color: #FFF;
     font-size: 16px;
     font-weight: 500;
@@ -717,30 +734,84 @@ ul {
     margin-bottom: 16px;
 }
 
+@media screen and (min-width: 1156px) {
+    .social-media-txt {
+        margin: 0 0 16px 0;
+    }
+}
+
 .social-media-footer {
     align-items: baseline;
     display: flex;
     flex-direction: column;
-    margin-right: 80px;
+    margin-bottom: 72px;
+}
+
+@media screen and (min-width: 1156px) {
+    .social-media-footer {
+        margin-bottom: 0px;
+        margin-right: 80px;
+
+    }
+    
 }
 
 
 .info-logo-footer {
     align-items: baseline;
-    margin-right: 120px;
+    margin-bottom: 72px;
 }
 
+@media screen and (min-width: 1156px) {
+    .info-logo-footer {
+        margin-right: 120px;
+        margin-bottom: 0px;
+    }
+}
+
+.logo-footer {
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: center;
+    color: #4D5AE5;
+    font-family: "Raleway", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.17;
+    letter-spacing: 0.54px;
+    text-transform: uppercase;
+}
+
+@media screen and (min-width: 1156px) {
+    .logo-footer {
+        margin-right: 76px;
+        justify-content: start;
+    }
+}
+
+
 footer .social-list-icons {
+    margin-left: auto;
+    margin-right: auto;
     gap: 16px;
 }
 
-footer .social-icon-link:hover {
-    background-color:  #31D0AA;
+@media screen and (min-width: 1156px) {
+    footer .social-list-icons {
+        margin: 0;
+    }
+
+    footer .social-icon-link:hover {
+        background-color:  #31D0AA;
+    }
+    
+    footer .social-icon-link:focus {
+        background-color:  #31D0AA;
+    }
+    
 }
 
-footer .social-icon-link:focus {
-    background-color:  #31D0AA;
-}
+
 
 /* form-footer */
 
@@ -819,24 +890,15 @@ footer .social-icon-link:focus {
 }
 
 
+/* ========== /Footer========== */
+
 /* ==========Logo========== */
 
 .logo:focus {
     color: #404bbf;
 }
 
-.logo-footer {
-    margin-bottom: 16px;
-    display: inline-block;
-    margin-right: 76px;
-    color: #4D5AE5;
-    font-family: "Raleway", sans-serif;
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 1.17;
-    letter-spacing: 0.54px;
-    text-transform: uppercase;
-}
+
 
 .logo {
     display: inline-block;
