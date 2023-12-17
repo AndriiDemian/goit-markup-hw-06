@@ -292,7 +292,7 @@ ul {
     /* Header 2 */
     font-size: 36px;
     font-weight: 700;
-    line-height: 1,11; 
+    line-height: 1.11; 
     letter-spacing: 0.02em;
 }
 
@@ -964,7 +964,7 @@ footer .social-list-icons {
     }
 }
 
-@media screen and (min-width: 1156) {
+@media screen and (min-width: 1156px) {
     .form-subscribe-input {
         margin: 0;
     }
