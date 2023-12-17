@@ -512,6 +512,7 @@ ul {
     display: flex;
     flex-wrap: wrap;
     gap: 72px;
+    flex-direction: column;
 }
 
 @media screen and (min-width: 768px) {
@@ -521,6 +522,7 @@ ul {
         justify-content: center;
         gap: 24px;
         row-gap: 64px;
+        flex-direction: row;
     }
 }
 
