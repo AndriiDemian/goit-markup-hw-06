@@ -59,10 +59,16 @@ body {
 /* =============== HEADER ============ */
 
 .page-header {
+    padding: 16px 0;
     border-bottom: 1px solid #E7E9FC;
     box-shadow: 0px 1px 6px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 2px 1px 0px rgba(46, 47, 66, 0.08);
 }
 
+@media screen and (min-width: 768px) {
+    .page-header {
+        padding: 0;
+    }
+}
 
 
 .container {
@@ -82,7 +88,7 @@ body {
     max-width: 1157px;
     }
 }
-.page-header .container {
+.page-header-cont {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -199,9 +205,6 @@ ul {
     }
 }
 
-.contact {
-    display: none;
-}
 
 @media screen and (min-width: 768px) {
     .contact {
@@ -227,6 +230,16 @@ ul {
         color: #404BBF;
     }
 }
+
+.menu-mob {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    fill: #2F2F37;
+    margin-left: auto;
+    line-height: 0;
+}
+
 
 
 
@@ -495,29 +508,33 @@ ul {
 }
 
 
+.card-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 72px;
+}
 
 @media screen and (min-width: 768px) {
     .card-list {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        margin-bottom: 64px;
         gap: 24px;
+        row-gap: 64px;
     }
 }
 
 @media screen and (min-width: 1158px) {
     .card-list {
-        margin-bottom: 0;
         display: flex;
         flex-wrap: nowrap;
         gap: 24px;
+        row-gap: 0;
     }
 }
 
 
 .card-team {
-    margin-bottom: 72px;
     border-radius: 0px 0px 4px 4px;
     box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 
     0px 1px 1px 0px rgba(46, 47, 66, 0.16), 
@@ -556,9 +573,11 @@ ul {
     justify-content: center;
 }
 
+
 .social-item-icon {
     width: 40px;
     height: 40px;
+    flex-shrink: 0;
 }
 
 .social-icon-link {
@@ -569,7 +588,6 @@ ul {
     border-radius: 50%;
     width: 100%;
     height: 100%;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-icon-link:active {
@@ -577,10 +595,14 @@ ul {
 
 }
 
-@media screen and (min-width) {
+@media screen and (min-width: 1158px) {
+    .social-icon-link {
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    }
     .social-icon-link:hover,
     .social-icon-link:focus {
-        background-color:  #404BBF;
+        background-color: #31D0AA;
     }
 }
 
@@ -1015,7 +1037,6 @@ footer .social-list-icons {
 
 .logo {
     display: inline-block;
-    margin-right: 76px;
     color: #4D5AE5;
     font-family: "Raleway", sans-serif;
     font-size: 18px;
@@ -1024,6 +1045,21 @@ footer .social-list-icons {
     letter-spacing: 0.54px;
     text-transform: uppercase;
 }
+
+@media screen and (min-width: 768px) {
+    .logo {
+        margin-right: 76px;
+
+    }
+}
+
+@media screen and (min-width: 1158px) {
+    .logo {
+        margin-right: 76px;
+
+    }
+}
+
 
 .logo-span {
     color: #f4f4fd;
@@ -1034,7 +1070,7 @@ footer .social-list-icons {
 }
 
 
-/* BACKDROP - STYLES */
+/* ========== BACKDROP - STYLES ========== */
 
 .backdrop {
     position: fixed;
@@ -1050,12 +1086,116 @@ footer .social-list-icons {
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.backdrop.is-open {
+.is-open {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
 }
 
+/* ========== MODAL MOBILE MENU ========== */
+
+.mobile-menu-wrapper {
+    position: fixed;
+    opacity: 0;
+    visibility: hidden;
+    min-width: 320px;
+    max-height: 640px;
+    top: 0;
+    left: 0;
+    padding: 72px 16px 40px 16px;
+    z-index: 999999;
+    width: 100%;
+    height: 100%;
+    background-color: #FFF;
+}
+
+@media screen and (min-width: 768px) {
+    .mobile-menu-wrapper{
+        display: none;
+    }
+    .menu-mob {
+        display: none;
+    }
+}
+.mob-list-menu {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    margin-bottom: 168px;
+}
+
+.mob-menu-cont {
+    position: relative;
+}
+
+.mob-menu-link {
+    color: #2E2F42;
+    font-family: Roboto;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.11; 
+    letter-spacing: 0.72px;
+    text-transform: capitalize;
+}
+
+.mob-menu-link:active {
+    color: #404BBF;
+}
+
+.mobile-menu-wrapper .contact {
+    text-decoration: none;
+    color: var(--SLATE, #434455);
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: 0.4px;
+}
+
+.mobile-menu-wrapper .contact:active {
+    color: #404BBF;
+
+}
+
+.mobile-menu-wrapper .adr-list {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 24px;
+    margin-bottom: 48px;
+
+}
+
+.mob-menu-close-btn {
+    position: absolute;
+    top: -48px;
+    right: 24px;
+    background-color: transparent;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    padding: 0;
+    line-height: 0;
+    border-color:  #E7E9FC;
+    outline: 0px solid transparent;
+    stroke-width: 1px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+
+
+}
+
+.mob-menu-close-btn-icon {
+    fill: #2E2F42;
+}
+
+.mobile-menu-wrapper .social-list-icons {
+    gap: 40px;
+}
+
+
+
+/* ========== /MODAL MOBILE MENU ========== */
 
 
 /* ====MODAL==== */
@@ -1068,7 +1208,7 @@ footer .social-list-icons {
     left: 50%;
     transform: translate(-50%,-50%);
     flex-shrink: 0;
-    padding: 72px 24px 24px 24px;
+    padding: 72px 16px 16px 24px;
     border-radius: 4px;
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
     background: var(--DAIRY, #FCFCFC);
@@ -1079,7 +1219,7 @@ footer .social-list-icons {
     .modal {
         width: 408px;
         min-height: 584px;
-        
+        padding: 72px 24px 24px 24px;
     }
 }
 
@@ -1241,12 +1381,15 @@ footer .social-list-icons {
 /*  =Custom-checkbox=  */
 
 .accept-root {
-    display: block;
+    display: flex;
+    align-items: center;
     color: #8E8F99;
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.04em;
 }
+
+
 
 .privacy-policy{
     color: #4D5AE5;
@@ -1261,6 +1404,7 @@ footer .social-list-icons {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    flex-shrink: 0;
     width: 16px;
     height: 16px;
     border-radius: 2px;
@@ -1271,6 +1415,19 @@ footer .social-list-icons {
     border 250ms cubic-bezier(0.4, 0, 0.2, 1), 
     fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+@media screen and (min-width: 768px) {
+    .modal-custom-checkbox {
+            flex-shrink: 1;
+    }
+}
+
+@media screen and (min-width: 1158px) {
+    .modal-custom-checkbox {
+            flex-shrink: 1;
+    }
+}
+
 
 .modal-form-checkbox {
     
