@@ -496,7 +496,7 @@ ul {
 .about-advntgs {
     color: #434455;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 1.5; 
     letter-spacing: 0.02em;
 
@@ -504,6 +504,8 @@ ul {
 
 @media screen and (min-width: 768px) {
     .advantages-list {
+        font-weight: 500;
+
         text-align: start;
     }
 }
